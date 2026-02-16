@@ -1,0 +1,31 @@
+class Solution:
+    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
+
+        # st = deque(students)
+        # sa = deque(sandwiches)
+        # cnt = 0
+        # while st and cnt<=len(st):
+        #     if st[0] == sa[0]:
+        #         st.popleft()
+        #         sa.popleft()
+        #         cnt = 0
+        #     else :
+        #         ele = st.popleft()
+        #         st.append(ele)
+        #         cnt+=1
+           
+        # return len(sa)
+
+        cnt = [0,0]
+        for s in students:
+            cnt[s]+=1
+        for s in sandwiches:
+            if cnt[s] == 0:
+                break
+            cnt[s]-=1
+        return cnt[0]+cnt[1]
+
+
+
+       
+        
